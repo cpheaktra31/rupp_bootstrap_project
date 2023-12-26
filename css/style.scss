@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Khmer', sans-serif;
+}
+
+// ======================================
+//      Defining
+// ======================================
+$primary: #1967D2;
+$light: #EFEAE5;
+$light_dark: #3C4043;
+$dark: #010101;
+$light_blur: rgba(239, 234, 229, 0.85);
+$border: rgba(0, 0, 0, 0.16);
+$yellow: #FFDF00;
+
+$rounded_non: 0px;
+$rounded_sm: 2px;
+$rounded_md: 4px;
+$rounded_lg: 8px;
+$rounded_xl: 14px;
+$rounded_xxl: 16px;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semiBold: 600;
+$fw-bold: 700;
+
+
+// ======================================
+//      General
+// ======================================
+.btn, .form-control {
+    border-radius: $rounded_md !important;
+    box-shadow: none !important;
+}
+.btn {
+    text-transform: uppercase;
+}
+
+// ======================================
+//      Navbar
+// ======================================
+.ec_navbar {
+    background: $light_blur;
+    border-radius: $rounded_md;
+    backdrop-filter: blur(10px);
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                color: $light_dark;
+                &.active {
+                    color: $primary;
+                }
+                &:hover {
+                    color: $primary;
+                }
+            }
+            .dropdown-menu {
+                border-radius: $rounded_md;
+                .dropdown-item {
+                    &:hover {
+                        background: none;
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ======================================
+//      Hero
+// ======================================
+.hero {
+    .wrapper {
+        .background {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                position: absolute;
+            }
+        }
+        .feature_background {
+            width: 100%;
+            height: inherit;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+        }
+        .feature_info {
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
+    }
+}
+
+// ======================================
+//      Content Title
+// ======================================
+.content_title {
+    .wrapper {
+        position: relative;
+        .background {
+            width: 100%;
+            min-height: 400px;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 100%;
+        }
+    }
+}
+
+// ======================================
+//      Category
+// ======================================
+.category {
+    .wrapper {
+        .card {
+            a {
+                color: $dark;
+                text-decoration: none;
+                transition: all 0.3s ease-out;
+                box-shadow: none;
+                border-radius: inherit;
+                .card-body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        max-width: 80px;
+                        height: auto;
+                        margin-bottom: 1rem;
+                        margin-top: 0.5rem;
+                    }
+                }
+                &:hover {
+                    color: $primary;
+                    transform: translateY(-2px);
+                    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+                }
+            }
+        }
+    }
+}
+
+// ======================================
+//      Feature Product
+// ======================================
+.feature {
+    .wrapper {
+        .wrapper_inner {
+            background: url(../img/dark_abstract_background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: $light;
+            border-radius: $rounded_xl;
+            overflow: hidden;
+            .feature_info {
+                padding-left: 8rem;
+            }
+        }
+    }
+}
+
+// ======================================
+//      Card Product
+// ======================================
+.card_product {
+    border-radius: $rounded_md;
+    transition: all 0.3s ease-out;
+    height: 100%;
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        a {
+            text-decoration: none;
+            color: $light_dark;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+                border-radius: $rounded_sm;
+                object-fit: cover;
+                object-position: center;
+            }
+            .title {
+                font-size: 1.125rem;
+                margin-bottom: 0;
+                margin-top: 0.25rem;
+            }
+            .price {
+                .discount {
+                    color: $primary;
+                    font-size: 1.125rem;
+                    font-weight: $fw-semiBold;
+                    margin-right: 0.25rem;
+                }
+                .ori_price {
+                    font-size: 0.875rem;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    }
+}
+
+// ======================================
+//      Footer
+// ======================================
+.footer {
+    .wrapper {
+        background: $light;
+        padding: 4rem 0 1rem 0;
+        .footer_menu {
+            padding-left: 0;
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    color: $light_dark;
+                    transition: all 0.3s ease-out;
+                    &:hover {
+                        color: $dark;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ======================================
+//      Carousel
+// ======================================
+.carousel {
+    .carousel-control-prev, .carousel-control-next {
+        width: max-content;
+        height: max-content;
+        background: $light_dark;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: $rounded_sm;
+        padding: 0.25rem;
+    }
+    .carousel-indicators {
+        position: static;
+        button {
+            width: 50px;
+            height: 50px;
+            img {
+                aspect-ratio: 1 / 1;
+                border-radius: $rounded_sm;
+                object-fit: cover;
+                object-position: center;
+                border: 1px solid $border;
+            }
+            &.active {
+                img {
+                    border: 2px solid $primary;
+                }
+            }
+        }
+    }
+}
+
+// ======================================
+//      Product Detail
+// ======================================
+.rating {
+    .star_group {
+        i {
+            color: $yellow;
+        }
+    }
+}
+
+.product_detail {
+    .price {
+        .discount {
+            color: $primary;
+            font-size: 2rem;
+            margin-right: 0.25rem;
+        }
+        .ori_price {
+            text-decoration: line-through;
+            color: $light_dark;
+        }
+    }
+}
+
+.item_btn_group {
+    display: flex;
+    flex-direction: row;
+    input {
+        max-width: 80px;
+        border: 0;
+    }
+}
